@@ -72,29 +72,6 @@
 
 ---
 
-## **Installation and Usage**
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/YourGitHubUsername/AI-Meal-Mate.git
-   cd AI-Meal-Mate
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Application**
-   ```bash
-   python app.py
-   ```
-
-4. **Access the App**
-   Open your browser and navigate to `http://localhost:5000`.
-
----
-
 ## **Contributing**
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. Ensure your code adheres to the contribution guidelines outlined in the `CONTRIBUTING.md` file.
 
