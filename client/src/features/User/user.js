@@ -5,7 +5,7 @@ const initialState = {
         name:"",
         email:"",
         password:"",
-        phone:""
+        number:""
     },
     // Check if usre is in cookies or not 
     isLogin:Cookies.get('authToken')?true:false
@@ -24,8 +24,8 @@ const userSlice = createSlice({
         setPassword:(state,action)=>{
             state.userInfo.password=action.payload;
         },
-        setPhone:(state,action)=>{
-            state.userInfo.phone=action.payload;
+        setNumber:(state,action)=>{
+            state.userInfo.number=action.payload;
         },
         login:(state,action)=>{
             state.isLogin=true;
@@ -37,6 +37,6 @@ const userSlice = createSlice({
         }
     }})
 
-export const {setName,setEmail,setPassword,setPhone,login,logout}=userSlice.actions
+export const {setName,setEmail,setPassword,setNumber,login,logout}=userSlice.actions
 
 export default userSlice.reducer

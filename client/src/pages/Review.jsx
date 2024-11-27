@@ -66,19 +66,33 @@ function Review() {
 
 
     return (
-        <div className='h-screen w-4/5 flex flex-col overflow-auto gap-4 bg-slate-50 p-8'>
-            <p className=' font-bold text-5xl'>Review</p>
-
-            {isReviewed?        <div className='h-screen border-2 rounded-3xl bg-white w-full flex justify-center items-center'>
-          <div className='flex flex-col justify-center items-center w-2/5 gap-5'>
-            <h1 className='text-3xl font-bold text-center'>You Already Reviewed Wanna Edit</h1>
-            <button className='bg-primary font-bold active:bg-yellow-500 max-w-48 shadow-2xl hover:bg-yellow-400 py-5 px-3 rounded-xl' onClick={() => { setIsReviewed(false) }}>
-              Edit Review
-            </button>
+        <div className="h-screen w-full flex flex-col gap-4 bg-slate-50 p-4 sm:p-8">
+        <p className="font-bold text-3xl sm:text-5xl">Review</p>
+      
+        {isReviewed ? (
+          <div className="h-auto sm:h-screen border-2 rounded-3xl bg-white w-full flex justify-center items-center py-8">
+            <div className="flex flex-col justify-center items-center w-full sm:w-2/5 gap-5">
+              <h1 className="text-2xl sm:text-3xl font-bold text-center">You Already Reviewed. Wanna Edit?</h1>
+              <button
+                className="bg-primary font-bold active:bg-yellow-500 max-w-xs sm:max-w-48 shadow-2xl hover:bg-yellow-400 py-3 sm:py-5 px-6 sm:px-8 rounded-xl"
+                onClick={() => { setIsReviewed(false); }}
+              >
+                Edit Review
+              </button>
+            </div>
           </div>
-        </div>:<ReviewCard ques={ReviewData[flow]} handleSubmit={handleSubmit} loading={loading} reviewAns={reviewAns} setReviewAns={setReviewAns} flow={setFlow} />}
-
-        </div>
+        ) : (
+          <ReviewCard
+            ques={ReviewData[flow]}
+            handleSubmit={handleSubmit}
+            loading={loading}
+            reviewAns={reviewAns}
+            setReviewAns={setReviewAns}
+            flow={setFlow}
+          />
+        )}
+      </div>
+      
     )
 
     const val = <div>

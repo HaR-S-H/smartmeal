@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt';
 
 export const signup = async (req, res) => {
     try {    
-        let { name, email, password } = new User(req.body);
+        let { name, email, password,number } = new User(req.body);
         // Check if user already exist
         let userExists = await User.findOne({ email });
         if (userExists) {
@@ -18,7 +18,7 @@ export const signup = async (req, res) => {
 
             password = hash
             
-            let user = new User({ name, email, password });
+            let user = new User({ name, email, password,number });
             
             await user.save();
 

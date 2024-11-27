@@ -49,7 +49,7 @@ function UserInfo({userStatus,onEditComplete}) {
               </div>
               <div className='flex gap-2 items-center'>
                 <LocalPhoneIcon />
-                {toEdit ? <input type="text" onChange={handleChange} className='text-gray-700 border-2 w-1/2 rounded-xl px-1 border-gray-500' name="phone" value={editData.phone == null ? 'XXX XXXX': editData.phone} /> : <h1 className='text-gray-700'>{userStatus.user.phone == null ? 'XXX XXXX': userStatus.user.phone}</h1>}
+                {toEdit ? <input type="text" onChange={handleChange} className='text-gray-700 border-2 w-1/2 rounded-xl px-1 border-gray-500' name="phone" value={editData.phone == null ? 'XXX XXXX': editData.phone} /> : <h1 className='text-gray-700'>{userStatus.user.number == null ? 'XXX XXXX': userStatus.user.number}</h1>}
               </div>
               <div className='flex gap-2 items-center'>
                 <HomeIcon />

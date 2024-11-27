@@ -8,9 +8,10 @@ export const validateSignup = Joi.object({
     email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
         .required(),
-
-    phone: Joi.string()
-        .pattern(new RegExp('^[0-9]{10}$'))
+    number: Joi.number()
+        .integer() // Ensure it's an integer
+        .min(1000000000) // Minimum 10-digit number
+        .max(9999999999) // Maximum 10-digit number
         .allow(null, ''),
 
     password: Joi.string()
@@ -37,12 +38,11 @@ export const validateProfile = Joi.object({
         .max(30)
         .required(),
 
-    phone: Joi.string()
-        .min(10)
-        .max(10)
-        .pattern(new RegExp('^[0-9]{10}$'))
+    number: Joi.number()
+        .integer() // Ensure it's an integer
+        .min(1000000000) // Minimum 10-digit number
+        .max(9999999999) // Maximum 10-digit number
         .allow(null, ''),
-        // Phone can be number a number
 
 
     address: Joi.string()

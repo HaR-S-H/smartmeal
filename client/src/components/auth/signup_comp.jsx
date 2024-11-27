@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import { Typography } from "@mui/material";
 import { useDispatch,useSelector } from "react-redux";
-import{setName,setEmail,setPassword,login} from '../../features/User/user'
+import{setName,setEmail,setPassword,login,setNumber} from '../../features/User/user'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {validateSignup} from '../../util/validator'
@@ -90,6 +90,17 @@ async function handleSignup(e){
           className="w-full border-b-2 border-gray-300  py-2  focus:outline-none focus:border-blue-500"
           value={userInfo.password}
           onChange={(e)=>dispatch(setPassword(e.target.value))}
+          required
+        />
+      </div>
+      <div className="mb-5">
+        <input
+          type="number"
+          id="number"
+          placeholder="mobile Number"
+          className="w-full border-b-2 border-gray-300  py-2  focus:outline-none focus:border-blue-500"
+          value={userInfo.number}
+          onChange={(e)=>dispatch(setNumber(e.target.value))}
           required
         />
       </div>

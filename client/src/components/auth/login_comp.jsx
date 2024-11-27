@@ -45,7 +45,7 @@ function Login_comp({ toggleAuth }) {
     // Login form goes here
     <>
       <form className='w-full'>
-        <h1 className='text-4xl font-semi-bold mb-5'>Login</h1>
+        <h1 className='text-4xl font-semi-bold mb-5'>Welcome</h1>
         <p className='mb-6'>Welcome back! Please enter your details.</p>
         <div className='mb-5'>
           <input type="text" id='email' placeholder='Email' className='w-full border-b-2  border-gray-300 py-2 focus:outline-none focus:border-blue-500' value={userInfo.email} onChange={(e) => { dispatch(setEmail(e.target.value)) }} required />
@@ -76,3 +76,8 @@ function Login_comp({ toggleAuth }) {
 }
 
 export default Login_comp
+
+
+
+
+
