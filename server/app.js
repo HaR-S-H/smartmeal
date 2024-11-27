@@ -35,7 +35,7 @@ const _dirname = path.dirname("");
 
 
 // const port = process.env.PORT || 3000;
-const port=3000
+// const port=3000
 
 
 
@@ -52,9 +52,9 @@ app.use(cookieParser());
 // Http server
 // Error Handling 
 
-app.listen(port, (req, res) => {
-  console.log('Server is running on port 3000');
-});
+// app.listen(port, (req, res) => {
+//   console.log('Server is running on port 3000');
+// });
 
 // scheduleMessages();
 app.get('/api', (req, res) => {
