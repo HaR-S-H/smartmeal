@@ -9,7 +9,7 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sharad Singh Chauhan",
+  "author": "TLE",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.15.0",
