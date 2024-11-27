@@ -44,30 +44,35 @@ function Profile() {
   // console.log(refreshTrigger);
   return (
     <>
-    <div className='h-screen w-4/5 flex flex-col overflow-auto gap-4 bg-slate-50 p-8'>
-    <p className=' font-bold text-5xl'>Profile</p>
+    <div className="h-screen w-full lg:w-4/5 flex flex-col overflow-auto gap-6 bg-slate-50 p-6 lg:p-8">
+      <p className="font-bold text-2xl lg:text-5xl">Profile</p>
       {userStatus && <UserInfo userStatus={userStatus} onEditComplete={refreshData} />}
-      <div className='flex flex-col h-full w-full gap-4  '>
+      <div className="flex flex-col h-full w-full gap-6">
         {userStatus && <UserStatus userStatus={userStatus} onEditComplete={refreshData} />}
-        <div className='flex h-1/2 w-full gap-2'>
-          <div className=' weightChart h-full w-full bg-white rounded-3xl p-2 shadow-xl'>
-            {userStatus && <InfoCard data={userStatus.calorie_distribution} title='Breakdown' />}
+  
+        {/* First Row */}
+        <div className="flex flex-col lg:flex-row h-auto lg:h-1/2 w-full gap-4">
+          <div className="weightChart h-auto lg:h-full w-full bg-white rounded-3xl p-4 shadow-xl">
+            {userStatus && <InfoCard data={userStatus.calorie_distribution} title="Breakdown" />}
           </div>
-          <div className=' weightChart h-full w-full bg-white rounded-3xl p-2 shadow-xl'>
-            {userStatus && <InfoCard data={userStatus.macros} title='Macros' />}
+          <div className="weightChart h-auto lg:h-full w-full bg-white rounded-3xl p-4 shadow-xl">
+            {userStatus && <InfoCard data={userStatus.macros} title="Macros" />}
           </div>
         </div>
-        {/* <div className='flex h-1/2  w-full gap-2'>
-          <div className=' calorieChart h-full w-full  bg-white rounded-3xl p-2 shadow-xl'>
-            <CalorieChart mealData={ userMeals && getLast7DaysMeals(userMeals)} userStatus={userStatus}  className="h-full w-full" />
+  
+        {/* Uncomment for Second Row */}
+        {/* <div className="flex flex-col lg:flex-row h-auto lg:h-1/2 w-full gap-4">
+          <div className="calorieChart h-auto lg:h-full w-full bg-white rounded-3xl p-4 shadow-xl">
+            <CalorieChart mealData={userMeals && getLast7DaysMeals(userMeals)} userStatus={userStatus} className="h-full w-full" />
           </div>
-          <div className=' weightChart h-full w-full bg-white rounded-3xl p-2 shadow-xl'>
+          <div className="weightChart h-auto lg:h-full w-full bg-white rounded-3xl p-4 shadow-xl">
             <WeightChart className="h-full w-full" />
           </div>
         </div> */}
       </div>
     </div>
-    </>
+  </>
+  
   )
 }
 

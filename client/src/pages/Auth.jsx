@@ -8,21 +8,35 @@ function Auth() {
   
   document.title = 'Auth'
   return (
-    <div className='py-20 px-36 bg-slate-300 w-full h-screen'>
-      <div className='bg-white flex h-[80vh]'>
-      {auth && <div className='w-3/5 px-24 py-16'>
-          <h1 className='font-medium text-xl mb-10'>Interective Brand</h1>
-           <Login_Component toggleAuth={()=>setAuth(!auth)}/>
-        </div>}
-        <div className='w-2/5'>
-          <img src={Login_img} alt="" className=' w-full h-full object-cover' />
+    <div className="py-10 px-6 sm:px-10 lg:px-36 bg-slate-300 w-full min-h-screen flex items-center justify-center">
+    <div className="bg-white flex flex-col lg:flex-row w-full max-w-6xl rounded-lg overflow-hidden shadow-md">
+      {/* Left Content for Login/Signup */}
+      {auth && (
+        <div className="w-full lg:w-3/5 px-6 sm:px-12 py-8 sm:py-16">
+          <h1 className="font-medium text-xl sm:text-2xl mb-6 sm:mb-10">Interactive Brand</h1>
+          <Login_Component toggleAuth={() => setAuth(!auth)} />
         </div>
-        {!auth && <div className='w-3/5 px-24 py-16'>
-          <h1 className='font-medium text-xl mb-10'>Interective Brand</h1>
-        <Signup_Component toggleAuth={()=>setAuth(!auth)}/>
-        </div>}
+      )}
+  
+      {/* Image Section */}
+      <div className="hidden lg:block w-full lg:w-2/5">
+        <img
+          src={Login_img}
+          alt=""
+          className="w-full h-full object-cover"
+        />
       </div>
+  
+      {/* Signup Section */}
+      {!auth && (
+        <div className="w-full lg:w-3/5 px-6 sm:px-12 py-8 sm:py-16">
+          <h1 className="font-medium text-xl sm:text-2xl mb-6 sm:mb-10">Interactive Brand</h1>
+          <Signup_Component toggleAuth={() => setAuth(!auth)} />
+        </div>
+      )}
     </div>
+  </div>
+  
   )
 }
 

@@ -48,7 +48,7 @@ function Meals() {
               {meals.map((meal, idx) => {
                 return (
                   <div className='' key={nanoid()} >
-                    <div className='text-4xl font-bold text-gray-800'>Date: {meal.date}</div>
+                    <div className='text-4xl font-bold text-gray-800 mt-5'>Date: {meal.date}</div>
                     <div className=''>
                       {meal.meals.map((food,idx)=>{
                         return (

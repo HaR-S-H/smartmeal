@@ -38,9 +38,9 @@ function Diet() {
       {!diet ? (<div className=' w-4/5 bg-slate-50'>
         <div className='h-screen border-2 w-full flex justify-center items-center'>
           <div className='flex flex-col justify-center items-center w-2/5 gap-5'>
-            <h1 className='text-3xl font-bold text-center'>Lets Create a dite plan for you</h1>
+            <h1 className='text-3xl font-bold text-center'>Lets Create a diet plan for you</h1>
             <button className='bg-primary font-bold active:bg-yellow-500 max-w-48 shadow-2xl hover:bg-yellow-400 py-5 px-3 rounded-xl' onClick={() => { setModelOpen(!modelOpen) }}>
-              Create Dite Plan
+              Create Diet Plan
             </button>
           </div>
         </div>
@@ -119,33 +119,37 @@ export const MealCard = ({ data,type,open }) => {
     Dinner:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRpbm5lcnxlbnwwfHwwfHx8MA%3D%3D'
   }
   return (
-    <div
-      className="w-52 h-36 bg-white rounded-lg shadow-md p-4 flex flex-col justify-between hover:bg-green-200 hover:border-2 border-green-300 cursor-pointer transition-colors duration-200"
-      onClick={handleClick}
-    > <div className='flex justify-between'>
-      <div className="text-sm text-gray-400 font-semibold">{type}</div>
-        <span className="text-sm text-gray-500">{data.nutrition.calories} cal</span>
-        </div>
-      <div className="text-lg font-bold">{data.name}</div>
-      <div className="flex items-center justify-between">
-        <img
-          src={demoImage[type]}
-          alt="Cereal"
-          className="w-10 h-10 object-cover rounded-full"
-        />
-        {/* <span className="text-sm text-gray-500">{data.nutrition.calories} cal</span> */}
-        <div class="flex justify-center space-x-4">
-  <button class="text-sm p-1 bg-blue-500 text-white rounded-full shadow-md transition-all duration-200 ease-in-out hover:bg-blue-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-300">
-    <span class="text-base">&larr;</span>
-  </button>
-  <button class="text-sm p-1 bg-blue-500 text-white rounded-full shadow-md transition-all duration-200 ease-in-out hover:bg-blue-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-300">
-    <span class="text-base">&rarr;</span>
-  </button>
+ <div
+  className="w-52 sm:w-60 md:w-64 lg:w-72 h-36 sm:h-40 bg-white rounded-lg shadow-md p-4 flex flex-col justify-between hover:bg-green-200 hover:border-2 border-green-300 cursor-pointer transition-colors duration-200"
+  onClick={handleClick}
+>
+  {/* Header Section */}
+  <div className="flex justify-between items-center">
+    <div className="text-xs sm:text-sm text-gray-400 font-semibold">{type}</div>
+    <span className="text-xs sm:text-sm text-gray-500">{data.nutrition.calories} cal</span>
+  </div>
+
+  {/* Main Content */}
+  <div className="text-base sm:text-lg font-bold truncate">{data.name}</div>
+
+  {/* Footer Section */}
+  <div className="flex items-center justify-between">
+    <img
+      src={demoImage[type]}
+      alt={type}
+      className="w-8 h-8 sm:w-10 sm:h-10 object-cover rounded-full"
+    />
+    <div className="flex space-x-2 sm:space-x-4">
+      <button className="text-xs sm:text-sm p-1 sm:p-2 bg-blue-500 text-white rounded-full shadow-md transition-all duration-200 ease-in-out hover:bg-blue-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        &larr;
+      </button>
+      <button className="text-xs sm:text-sm p-1 sm:p-2 bg-blue-500 text-white rounded-full shadow-md transition-all duration-200 ease-in-out hover:bg-blue-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        &rarr;
+      </button>
+    </div>
+  </div>
 </div>
 
-
-      </div>
-    </div>
   );
 
 

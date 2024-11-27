@@ -9,6 +9,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+// import scheduleMessages from './SMS/sendMessage.js';
 import shoppingRoute from './routes/shopping.route.js'
 import 'dotenv/config'
 
@@ -55,6 +56,7 @@ app.listen(port, (req, res) => {
   console.log('Server is running on port 3000');
 });
 
+// scheduleMessages();
 app.get('/api', (req, res) => {
   res.send('Working fine');
 });

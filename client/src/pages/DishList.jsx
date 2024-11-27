@@ -94,7 +94,8 @@ const DishList = () => {
   return (
     <div className="container mx-auto px-6 py-10">
       <div className="flex justify-between items-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 ml-10">Available Dishes</h1>
+      <h1 className="text-4xl font-bold text-gray-800 ml-10 md:text-2xl sm:2md">Available Dishes</h1>
+
         <div className="flex space-x-4">
           {/* Upload Button */}
           <button
