@@ -72,5 +72,5 @@ app.use('/api/diet',dite);
 app.use('/api/review',review);
 app.use('/api/shopping',shoppingRoute);
 
-
+export default app;
 // Testing
